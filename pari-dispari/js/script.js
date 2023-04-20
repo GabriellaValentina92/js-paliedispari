@@ -6,7 +6,7 @@
 // Dichiariamo chi ha vinto
 
 const userOddEven = prompt('Pari o dispari?');
-const userNum = prompt('scegli un numero da 1 a 5');
+const userNum = parseInt(prompt('scegli un numero da 1 a 5'));
 console.log(userNum)
 
 const randomNum = getRandomInteger(1, 5);
@@ -17,16 +17,14 @@ function getRandomInteger (min, max) {
     return random;
 }
 
-const sum = sumNum(userNum, randomNum);
+let sum = userNum + randomNum;
 
-function sumNum (userNum, randomNum){
-    return userNum + randomNum;
-}
-
-isEven(sum); //dovrebbe essere la somma tra userNum e randomNum
+isEven(sum); 
 console.log(sum)
 
-if (isEven(sum) && oddEven == 0){
+if (isEven(sum) && userOddEven === 0){
+    console.log('hai vinto')
+} else if (!isEven(sum) && userOddEven === 1){
     console.log('hai vinto')
 } else {
     console.log('hai perso')
