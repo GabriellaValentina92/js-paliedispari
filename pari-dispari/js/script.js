@@ -5,7 +5,7 @@
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto
 
-const userOddEven = prompt('Pari o dispari?');
+const divisibility = prompt('Pari o dispari?');
 const userNum = parseInt(prompt('scegli un numero da 1 a 5'));
 console.log(userNum)
 
@@ -16,21 +16,24 @@ function getRandomInteger (min, max) {
     const random = Math.floor(Math.random() * (max - min + 1)) + min;
     return random;
 }
+// debugger
 
 let sum = userNum + randomNum;
 
-isEven(sum); 
+isEvenOdd(sum); 
 console.log(sum)
 
-if (isEven(sum) && userOddEven === 0){
-    console.log('hai vinto')
-} else if (!isEven(sum) && userOddEven === 1){
+
+if (divisibility == isEvenOdd(sum)){
     console.log('hai vinto')
 } else {
-    console.log('hai perso')
+    console.log('hai vinto')
 }
 
 
-function isEven(number) {
-	return number % 2 == 0;
+function isEvenOdd(number) {
+    if (number % 2 == 0) {
+        return 'pari';
+    }
+	return 'dispari';
 }
